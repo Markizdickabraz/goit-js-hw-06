@@ -12,3 +12,41 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+// розмітка 
+ 
+const makegalleryItems = ({ url, alt }) => {
+  return `
+  <li class = "gallery__item">
+  <img src =${url} , alt = ${alt} , width = 480 >
+  </li>
+  `;
+};
+// console.log(makegalleryItems(images[0]));
+
+// функція перебору та додаваня в масив
+
+const makegalleryList = images.map(makegalleryItems).join(' ');
+
+// шукаю потрібно строку через клас
+const galleryList = document.querySelector('.gallery');
+
+// дадаю до неі елементи
+galleryList.insertAdjacentHTML("afterbegin", makegalleryList);
+console.log(galleryList);
+
+
+
+// const makegalleryList = (options) => {
+//   return options.map(option => {
+//     const imgEl = document.createElement('img');
+//     imgEl.src = option.url;
+//     imgEl.alt = option.alt;
+//     imgEl.width = 480;
+
+//     return imgEl;
+//   });
+// };
+
+// const elements = makegalleryList(images);
+// galleryList.insertAdjacentHTML('afterbegin');
