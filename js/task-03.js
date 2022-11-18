@@ -18,7 +18,7 @@ const images = [
 const makegalleryItems = ({ url, alt }) => {
   return `
   <li class = "gallery__item">
-  <img src =${url} , alt = ${alt} , width = 480 >
+  <img src =${url} , alt = ${alt} , width = 480, height = 100%>
   </li>
   `;
 };
@@ -30,6 +30,14 @@ const makegalleryList = images.map(makegalleryItems).join(' ');
 
 // шукаю потрібно строку через клас
 const galleryList = document.querySelector('.gallery');
+galleryList.style.display = 'flex';
+
+// не спраацював ГЕП(
+galleryList.style.gap = "30";
+galleryList.style.listStyle = "none";
+
+// console.dir(galleryList);
+
 
 // дадаю до неі елементи
 galleryList.insertAdjacentHTML("afterbegin", makegalleryList);
