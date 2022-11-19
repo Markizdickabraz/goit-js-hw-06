@@ -7,7 +7,8 @@ function eventValue(event) {
     
     if (event.currentTarget.value.length < event.currentTarget.dataset.length) {
         return input.classList.add('invalid');
-    }
-    return input.classList.replace('invalid','valid');
-};
-console.log(input);
+    } if (event.currentTarget.value.length == event.currentTarget.dataset.length){
+        return input.classList.replace('invalid', 'valid');
+    }if (event.currentTarget.value.length > event.currentTarget.dataset.length){
+        return input.classList.replace('valid', 'invalid');
+}};
